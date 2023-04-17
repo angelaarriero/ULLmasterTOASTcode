@@ -7,7 +7,7 @@ from toast.weather import Weather
 
 class Dschedule:
     START_TIME = 1619830200 #saturday, 1 may 2021 0:50:00
-    DURATION = 60*60*24 #(duration in seconds  )
+    DURATION = 1 # 60*60*24 #(duration in seconds  )
     STOP_TIME = START_TIME + DURATION #GMT: Wednesday, 1 January 2020 10:50:00
     SAMPLE_RATE = 1000 #Hz
     OT_ALTITUDE = 2390 # m
