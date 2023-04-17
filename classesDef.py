@@ -47,7 +47,7 @@ class Dsimulation:
     iter_max=100
     use_noise_prior=False
     npix = 12 * NSIDE ** 2
-    cmb_simu="COM_PowerSpect_CMB-base-plikHM-TTTEEE-lowl-lowE-lensing-minimum-theory_R3.01_ang.txt"
+    cmb_simu="power_spect.txt"
     fwhm=0.6
 
 def Dknee(Ddetector,number,n2):
