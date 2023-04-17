@@ -4,6 +4,7 @@ import healpy as hp
 from toast.tod import AnalyticNoise
 from TODangela import TODGb
 from toast.weather import Weather
+import pickle
 
 class Dschedule:
     START_TIME = 1619830200 #saturday, 1 may 2021 0:50:00
