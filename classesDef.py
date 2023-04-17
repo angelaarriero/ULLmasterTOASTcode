@@ -144,3 +144,5 @@ def cmbinput(Dsimulation):
     hp.write_map("/scratch/aarriero/main_docs/ULLmasterTOASTcode/sim_map_d.fits", hp.reorder(cmb_map, r2n=True), nest=True, overwrite=True)
     MAPA_SIM="sim_map_d.fits"
     return MAPA_SIM
+
+#prueba borrar
