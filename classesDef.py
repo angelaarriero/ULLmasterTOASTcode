@@ -19,7 +19,7 @@ class Dschedule:
     SCANRATE =120 #Hz
     DET_RATE =1000 #Hz
     weather_atacama = Weather(fname='weather_Atacama.fits')
-    weather_tenerife = Weather(fname='weather_Tenerife.fits')
+    #weather_tenerife = Weather(fname='weather_Tenerife.fits')
 #File which contains distribution and characteristics of the detectors  
 with open('sron.pkl','rb') as f:
     data2=pickle.load(f)
