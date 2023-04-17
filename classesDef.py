@@ -124,7 +124,7 @@ def mifuncion(Ddetector,Dschedule,noise_ar,weather_atacama,focalplane,MAPA_SIM,D
 
     )
   mapmaker.exec(data)
-return noise_ar,data
+  return noise_ar,data
 
 def cmbinput(Dsimulation):
     input_cl = pd.read_csv(Dsimulation.cmb_simu,
@@ -141,6 +141,6 @@ def cmbinput(Dsimulation):
     cmb_map = hp.alm2map(alm, nside=high_nside, lmax=lmax,fwhm=np.radians(Dsimulation.fwhm))
     #hp.mollview(cmb_map[0], min=-300*1e-6, max=300*1e-6, unit="K", title="CMB Temperature")
     hp.mollview(cmb_map[0], title="CMB Temperature",unit='uK')
-    hp.write_map("/scratch/aarriero-ext/new_simulation/Hatacama/sim_map_d.fits", hp.reorder(cmb_map, r2n=True), nest=True, overwrite=True)
+    hp.write_map("/scratch/aarriero/main_docs/ULLmasterTOASTcode/sim_map_d.fits", hp.reorder(cmb_map, r2n=True), nest=True, overwrite=True)
     MAPA_SIM="sim_map_d.fits"
     return MAPA_SIM

@@ -49,22 +49,22 @@ for det in dets:
 times2 = np.array(tod_er2.local_times())
 detss2= np.array(dets)
 
-import pickle
-with open('/scratch/aarriero-ext/new_simulation/Hatacama/map_maker_H_1fA_l50/noiseH1faz1000.pickle', 'wb') as handle:
-    pickle.dump(Noise2, handle, protocol=pickle.HIGHEST_PROTOCOL)
-with open('/scratch/aarriero-ext/new_simulation/Hatacama/map_maker_H_1fA_l50/timesH1faz1000.pickle', 'wb') as handle:
-    pickle.dump(times2, handle, protocol=pickle.HIGHEST_PROTOCOL)
+#import pickle
+#with open('/scratch/aarriero-ext/new_simulation/Hatacama/map_maker_H_1fA_l50/noiseH1faz1000.pickle', 'wb') as handle:
+#    pickle.dump(Noise2, handle, protocol=pickle.HIGHEST_PROTOCOL)
+#with open('/scratch/aarriero-ext/new_simulation/Hatacama/map_maker_H_1fA_l50/timesH1faz1000.pickle', 'wb') as handle:
+#    pickle.dump(times2, handle, protocol=pickle.HIGHEST_PROTOCOL)
 
-with open('/scratch/aarriero-ext/new_simulation/Hatacama/map_maker_H_1fA_l50/skyH1faz1000.pickle', 'wb') as handle:
-    pickle.dump(sky_signal_full2, handle, protocol=pickle.HIGHEST_PROTOCOL)
-with open('/scratch/aarriero-ext/new_simulation/Hatacama/map_maker_H_1fA_l50/fullH1faz1000.pickle', 'wb') as handle:
-    pickle.dump(full_signal2, handle, protocol=pickle.HIGHEST_PROTOCOL)
+#with open('/scratch/aarriero-ext/new_simulation/Hatacama/map_maker_H_1fA_l50/skyH1faz1000.pickle', 'wb') as handle:
+#    pickle.dump(sky_signal_full2, handle, protocol=pickle.HIGHEST_PROTOCOL)
+#with open('/scratch/aarriero-ext/new_simulation/Hatacama/map_maker_H_1fA_l50/fullH1faz1000.pickle', 'wb') as handle:
+#    pickle.dump(full_signal2, handle, protocol=pickle.HIGHEST_PROTOCOL)
 
-with open('/scratch/aarriero-ext/new_simulation/Hatacama/map_maker_H_1fA_l50/atmosphereH1faz1000.pickle', 'wb') as handle:
-    pickle.dump(atmosphere_signal2, handle, protocol=pickle.HIGHEST_PROTOCOL)    
-with open('/scratch/aarriero-ext/new_simulation/Hatacama/map_maker_H_1fA_l50/signalH1faz1000.pickle', 'wb') as handle:
-    pickle.dump(signal2, handle, protocol=pickle.HIGHEST_PROTOCOL) 
-with open('/scratch/aarriero-ext/new_simulation/Hatacama/map_maker_H_1fA_l50/dets_nameH1faz1000.pickle', 'wb') as handle:
-    pickle.dump(detss2, handle, protocol=pickle.HIGHEST_PROTOCOL)   
+#with open('/scratch/aarriero-ext/new_simulation/Hatacama/map_maker_H_1fA_l50/atmosphereH1faz1000.pickle', 'wb') as handle:
+#    pickle.dump(atmosphere_signal2, handle, protocol=pickle.HIGHEST_PROTOCOL)
+#with open('/scratch/aarriero-ext/new_simulation/Hatacama/map_maker_H_1fA_l50/signalH1faz1000.pickle', 'wb') as handle:
+#    pickle.dump(signal2, handle, protocol=pickle.HIGHEST_PROTOCOL)
+#with open('/scratch/aarriero-ext/new_simulation/Hatacama/map_maker_H_1fA_l50/dets_nameH1faz1000.pickle', 'wb') as handle:
+#    pickle.dump(detss2, handle, protocol=pickle.HIGHEST_PROTOCOL)
 
 
