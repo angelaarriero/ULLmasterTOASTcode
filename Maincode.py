@@ -12,7 +12,7 @@ import classesDef as cd
 
 #CMB INPUT MAP
 MAPA_SIM= cd.cmbinput(cd.Dsimulation)
-
+#prueba
 #to change the polarization angles of the detectors
 cd.Ddetector.detquat['2']=[0.027150201580442457,0.0028586627064642166,0.38116388211451296,0.9241043174734472]
 cd.Ddetector.detquat['0']=[0.01545194635831245,-0.003324119502272795,0.923267816842732,0.3838316375257909]
