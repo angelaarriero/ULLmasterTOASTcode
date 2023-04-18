@@ -44,7 +44,7 @@ signal2=[]
 for det in dets:
         sky_signal_full2.append(tod_er2.local_signal(det, "sky_signal"))
         full_signal2.append(tod_er2.local_signal(det, "full_signal"))
-        #atmosphere_signal2.append(tod_er2.local_signal(det, "atmosphere"))
+        #atmosphere_signal2.append(tod_er2.local_signal(det, "atmosphere"))#
         signal2.append(tod_er2.local_signal(det, "signal"))
 times2 = np.array(tod_er2.local_times())
 detss2= np.array(dets)
