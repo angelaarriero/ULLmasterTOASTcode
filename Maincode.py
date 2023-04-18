@@ -66,5 +66,5 @@ detss2= np.array(dets)
 #    pickle.dump(signal2, handle, protocol=pickle.HIGHEST_PROTOCOL)
 #with open('/scratch/aarriero-ext/new_simulation/Hatacama/map_maker_H_1fA_l50/dets_nameH1faz1000.pickle', 'wb') as handle:
 #    pickle.dump(detss2, handle, protocol=pickle.HIGHEST_PROTOCOL)
-
+#otro cambio
 
