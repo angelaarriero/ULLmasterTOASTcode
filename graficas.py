@@ -12,4 +12,4 @@ destriped1[destriped1 == 0] = hp.UNSEEN
 
 plt.figure(figsize=[12, 12])
 hp.mollview(destriped1[0], sub=[3, 2, 6], title="24h Destriped Map: 1/f Noise",unit='uK')
-#plt.savefig("24h_820_simu_maps.png")
+plt.savefig("/scratch/aarriero/main_docs/resultados/map_maker_H_1fA_l50/24h_820_simu_maps.png")
