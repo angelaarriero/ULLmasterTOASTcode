@@ -27,8 +27,8 @@ cd.Ddetector.detquat['20']=[0.0027946836751364147,0.02715686177532145,-0.9232036
 N2=cd.minoise(cd.Ddetector,250,1) #1/f 1Hz
 
 weth_fil=cd.Dschedule.weather_atacama
-outdir2="/scratch/aarriero/main_docs/resultados/map_maker_H_1fA_l50"
-outprefix2="toast_testH_JAN3000T1fA2_l50_scan10"
+outdir2="/scratch/aarriero/main_docs/resultados/map_maker_test1"
+outprefix2="toast_test_"
 
 Noise2,data2=cd.mifuncion(cd.Ddetector,cd.Dschedule,N2,weth_fil,cd.focalplane,
                             MAPA_SIM,cd.Dsimulation,outdir2,outprefix2)

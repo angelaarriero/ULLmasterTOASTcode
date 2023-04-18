@@ -7,9 +7,11 @@ import healpy as hp
 from tqdm import tqdm
 
 
-destriped1 = hp.read_map("/scratch/aarriero/main_docs/resultados/map_maker_H_1fA_l50/toast_testH_JAN3000T1fA2_l50_scan10binned.fits",field=None)
-destriped1[destriped1 == 0] = hp.UNSEEN
-
+hits_map = hp.read_map("/scratch/aarriero/main_docs/resultados/map_maker_test1/toast_test_binned.fits",field=None)
+hits_map[hits_map == 0] = hp.UNSEEN
+destriped = hp.read_map("/scratch/aarriero/main_docs/resultados/map_maker_test1/toast_test_binned.fits",field=None)
+destriped[destriped == 0] = hp.UNSEEN
 plt.figure(figsize=[12, 12])
-hp.mollview(destriped1[0], sub=[3, 2, 6], title="24h Destriped Map: 1/f Noise",unit='uK')
+hp.mollview(hits_map[0], sub=[1, 3, 1], title="24h Hits Map: 1/f Noise",unit='uK')
+hp.mollview(destriped[0], sub=[1, 3, 2], title="24h Destriped Map: 1/f Noise",unit='uK')
 plt.savefig("/scratch/aarriero/main_docs/resultados/map_maker_H_1fA_l50/24h_820_simu_maps.png")
