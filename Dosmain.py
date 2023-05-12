@@ -1,14 +1,14 @@
 import numpy as np
-import healpy as hp
+#import healpy as hp
 from toast.tod import AnalyticNoise
 import os
 #####-------##########
 from TODangela import (TODGb)
-import classesDef as cd
+import DosclassesDef as cd
 ########----##############
 import pickle
 #CMB INPUT MAP
-MAPA_SIM= cd.cmbinput(cd.Dsimulation)
+#MAPA_SIM= cd.cmbinput(cd.Dsimulation)
 #prueba
 #to change the polarization angles of the detectors
 cd.Ddetector.detquat['2']=[0.027150201580442457,0.0028586627064642166,0.38116388211451296,0.9241043174734472]
@@ -23,16 +23,16 @@ cd.Ddetector.detquat['20']=[0.0027946836751364147,0.02715686177532145,-0.9232036
 #1/F AND WHITE NOISE FUNCTION---> KNEE FRECUENCY VALUE, NET value, fmin
 N2=cd.minoise(cd.Ddetector,250,1) #1/f 1Hz
 
-weth_fil=cd.Dschedule.weather_atacama
-outdir2="/scratch/aarriero/main_docs/resultados/map_maker_test1"
-outprefix2="toast_test_"
+#weth_fil=cd.Dschedule.weather_atacama
+#outdir2="/scratch/aarriero/main_docs/resultados/map_maker_test1"
+#outprefix2="toast_test_"
 
-Noise1,data1=cd.mifuncion(cd.Ddetector,cd.Dschedule,N2,weth_fil,cd.focalplane,
-                            MAPA_SIM,cd.Dsimulation,outdir2,outprefix2)
+#Noise1,data1=cd.mifuncion(cd.Ddetector,cd.Dschedule,N2,weth_fil,cd.focalplane,
+#                            MAPA_SIM,cd.Dsimulation,outdir2,outprefix2)
 
 
-with open('noise1.pickle', 'wb') as handle:
-    pickle.dump(Noise1, handle, protocol=pickle.HIGHEST_PROTOCOL)
+#with open('noise1.pickle', 'wb') as handle:
+#    pickle.dump(Noise1, handle, protocol=pickle.HIGHEST_PROTOCOL)
 
-with open('noise1.pickle', 'rb') as handle:
-    Noise1_pkl = pickle.load(handle)
+#with open('noise1.pickle', 'rb') as handle:
+#    Noise1_pkl = pickle.load(handle)
