@@ -157,3 +157,22 @@ class TODGb(toast.todmap.TODGround):
         self._commonflags = np.array([0]*samples, dtype=np.uint8)
         self._times = self._CES_start + np.arange(samples) / self._rate
         return [samples], [self._CES_start]
+
+def cmbinput(Dsimulation):
+    input_cl = pd.read_csv(Dsimulation.cmb_simu,
+                       delim_whitespace=True, index_col=0)
+    lmax = input_cl.index[-1]
+    cl = input_cl.divide(input_cl.index * (input_cl.index+1) / (np.pi*2), axis="index")
+    #cl /= 1e12
+    cl = cl.reindex(np.arange(0, lmax+1))
+    cl = cl.fillna(0)
+    seed = 58
+    np.random.seed(seed)
+    alm = hp.synalm((cl.TT, cl.EE, cl.BB, cl.TE), lmax=lmax, new=True)
+    high_nside = Dsimulation.NSIDE
+    cmb_map = hp.alm2map(alm, nside=high_nside, lmax=lmax,fwhm=np.radians(Dsimulation.fwhm))
+    #hp.mollview(cmb_map[0], min=-300*1e-6, max=300*1e-6, unit="K", title="CMB Temperature")
+    hp.mollview(cmb_map[0], title="CMB Temperature",unit='uK')
+    hp.write_map("/scratch/aarriero/main_docs/ULLmasterTOASTcode/sim_map_d.fits", hp.reorder(cmb_map, r2n=True), nest=True, overwrite=True)
+    MAPA_SIM="sim_map_d.fits"
+    return MAPA_SIM

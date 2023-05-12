@@ -8,8 +8,9 @@ import DosclassesDef as cd
 ########----##############
 import pickle
 #CMB INPUT MAP
-#MAPA_SIM= cd.cmbinput(cd.Dsimulation)
-#prueba
+
+Input_CMB_map= cd.cmbinput(cd.Dsimulation)
+
 #to change the polarization angles of the detectors
 cd.Ddetector.detquat['2']=[0.027150201580442457,0.0028586627064642166,0.38116388211451296,0.9241043174734472]
 cd.Ddetector.detquat['0']=[0.01545194635831245,-0.003324119502272795,0.923267816842732,0.3838316375257909]
@@ -20,15 +21,16 @@ cd.Ddetector.detquat['17']=[-0.004648629965548112,0.028130068744699158,-0.923121
 cd.Ddetector.detquat['22']=[-0.031104438072555272,0.026928211119763415,-0.38174173204247064,-0.9233529311131766]
 cd.Ddetector.detquat['20']=[0.0027946836751364147,0.02715686177532145,-0.9232036569137106,-0.38334019155682547]
 
-#1/F AND WHITE NOISE FUNCTION---> KNEE FRECUENCY VALUE, NET value, fmin
-N2=cd.minoise(cd.Ddetector,250,1) #1/f 1Hz
+#Simulated_noise---> Detector parameters, Knee freq., NET (Noise Equivalent Temperature)
 
-#weth_fil=cd.Dschedule.weather_atacama
-#outdir2="/scratch/aarriero/main_docs/resultados/map_maker_test1"
-#outprefix2="toast_test_"
+PSD_Analytic_result =cd.Simulated_noise(cd.Ddetector,250,1) #1/f 1Hz
 
-#Noise1,data1=cd.mifuncion(cd.Ddetector,cd.Dschedule,N2,weth_fil,cd.focalplane,
-#                            MAPA_SIM,cd.Dsimulation,outdir2,outprefix2)
+weth_fil=cd.Dschedule.weather_atacama
+outdir2="/scratch/aarriero/main_docs/resultados/map_maker_test1"
+outprefix2="toast_test_"
+
+Noise1,data1=cd.TOD_generator(cd.Ddetector,cd.Dschedule,PSD_Analytic_result,weth_fil,cd.focalplane,
+                            Input_CMB_map,cd.Dsimulation,outdir2,outprefix2)
 
 
 #with open('noise1.pickle', 'wb') as handle:
